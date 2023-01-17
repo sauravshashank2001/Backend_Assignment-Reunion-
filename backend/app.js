@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //using routes
-app.use("/api/v1",post)
-app.use("/api/v1",user)
+app.use("/api",post)
+app.use("/api",user)
 
 
 
