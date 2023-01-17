@@ -7,12 +7,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter a name"],
   },
-
-  avatar: {
-    public_id: String,
-    url: String,
-  },
-
   email: {
     type: String,
     required: [true, "Please enter an email"],
@@ -45,8 +39,6 @@ const userSchema = new mongoose.Schema({
     },
   ],
 
-  resetPasswordToken: String,
-  resetPasswordExpire: Date,
 });
 
 userSchema.pre("save", async function (next) {

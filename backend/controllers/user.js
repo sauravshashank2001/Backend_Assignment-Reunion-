@@ -14,7 +14,6 @@ exports.register = async(req,res)=>{
             name,
             email,
             password,
-            avatar : {public_id : "sample_id", url: "sampleurl"},
 
         });
         return res.status(200).json({
@@ -92,9 +91,9 @@ exports.getUserProfile = async (req, res) => {
   
       res.status(200).json({
         success: true,
-        posts: user.posts,
-        following: user.following,
-        followers: user.followers
+        name: user.name,
+        no_of_following: user.following.length,
+        no_of_followers: user.followers.length
       });
     } catch (error) {
       res.status(500).json({
